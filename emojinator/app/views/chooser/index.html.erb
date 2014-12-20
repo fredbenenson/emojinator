@@ -7,16 +7,11 @@
 		<title>Emojinator</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
+        
 
-        <%= stylesheet_link_tag "application" %>
-        <%= stylesheet_link_tag "jquery.emojiarea.css" %>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-        <%= javascript_include_tag "jquery.emojiarea.js" %>
-        <%= javascript_include_tag "emojis.js" %>
-
-        <%= stylesheet_link_tag "fontello" %>
-        <%= stylesheet_link_tag "emoji" %>
+		<%= stylesheet_link_tag "application", media: "all" %>
+        <%= javascript_include_tag "application" %>    
+    
         <!-- boostrap -->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -28,13 +23,12 @@
 	</head>
 	<body>
     <div class="container">
-		<h1><%= image_tag "favicon.png" %>Translate This Into Emoji!</h1>
+		<h1><%= image_tag "favicon.png", style: "width: 100px; padding: 15px;" %>Translate This Into Emoji!</h1>
     </div>
     <form>
         <h2>
             Hello, friend.
         </h2>
-        <div><%= image_tag "downarrow.png", style: "width: 100px; padding: 15px;" %></div>
 
      
 		<div class="example">
@@ -49,12 +43,12 @@
 
 
 		<script>
-		var $wysiwyg = $('.emojis-wysiwyg').emojiarea({wysiwyg: true});
-		var $wysiwyg_value = $('#emojis-wysiwyg-value');
+    		var $wysiwyg = $('.emojis-wysiwyg').emojiarea({wysiwyg: true});
+    		var $wysiwyg_value = $('#emojis-wysiwyg-value');
 
-		$wysiwyg.on('change', function() {
-			$wysiwyg_value.text($(this).val());
-		});
+    		$wysiwyg.on('change', function() {
+    			$wysiwyg_value.text($(this).val());
+    		});
 
 		$wysiwyg.trigger('change');
 		</script>

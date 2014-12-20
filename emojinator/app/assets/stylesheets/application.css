@@ -12,7 +12,15 @@
  *
  *= require_tree .
  *= require_self
+ *= require animation
+ *= require fontello-codes
+ *= require fontello-embedded
+ *= require fontello-ie7-codes
+ *= require fontello-ie7
+ *= require fontello
  */
+
+
 *{
 	margin: 0;
 	padding: 0;
