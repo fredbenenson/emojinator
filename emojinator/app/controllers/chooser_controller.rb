@@ -1,0 +1,2 @@
+class ChooserController < ApplicationController
+end

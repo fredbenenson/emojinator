@@ -1,0 +1,2 @@
+module ChooserHelper
+end
