@@ -5,6 +5,8 @@ Rails.application.config.assets.version = '1.0'
 
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
+
+# "By default Rails 4 will not serve your assets."
 Rails.application.config.serve_static_assets = true
 
 # Precompile additional assets.
