@@ -25,7 +25,7 @@
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
   $.emojiarea = {
-    path: 'fred',
+    path: '',
     icons: {},
     defaults: {
       button: null,
