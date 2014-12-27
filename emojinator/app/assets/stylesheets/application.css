@@ -13,13 +13,14 @@
  *= require_tree .
  *= require_self
  *= require animation
+ *= require fontello
  *= require fontello-codes
  *= require fontello-embedded
  *= require fontello-ie7-codes
  *= require fontello-ie7
- *= require fontello
- */
 
+ *= require jquery.emojiarea
+ */
 
 *{
 	margin: 0;
@@ -32,6 +33,14 @@ body {
 	padding: 100px;
 	-webkit-font-smoothing: antialiased;
 }
+li {
+	list-style: none;
+}
+
+.email {
+	margin: 10px;
+}
+
 textarea, .emoji-wysiwyg-editor {
 	width: 100%;
 	height: 100px;
