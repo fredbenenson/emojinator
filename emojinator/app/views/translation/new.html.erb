@@ -21,18 +21,26 @@
       <h1><%= image_tag "favicon.png", style: "width: 100px; padding: 15px;" %>Translate This Into Emoji!</h1>
     </div>
 
-    <%= form_for @translation, url: {action: "create"} do |f| %>
-      <%= f.text_field :email %>
-      <%= f.text_area :emoji, rows: 5, html: { class: 'emojis-wysiwyg' } %>
+    <%= form_tag translation_path do %>
+      <div class = "email">
+        Email:
+        <%= text_field_tag 'email' %>
+      </div>
+      <div class = "example">
+        <%= text_area_tag 'emoji', ':wave::neckbeard:', rows: 5, class: 'emojis-wysiwyg' %>
+      </div>
       <div style="display: none;" class="value"><pre id="emojis-wysiwyg-value"></pre></div>
-      <%= f.submit "Create" %>
+      <input type='button' onclick='return false;' id = 'emoji_button' value = 'Emoji Palette'></input>
+      <%= button_tag "Submit", id: :submit_button %>
+
     <% end %>
 
 
-    <%= form_tag('/chooser') %>
-
     <script>
-    var $wysiwyg = $('.emojis-wysiwyg').emojiarea({wysiwyg: true});
+    var $wysiwyg = $('.emojis-wysiwyg').emojiarea({
+      wysiwyg: true,
+      button: '#emoji_button'
+    });
     var $wysiwyg_value = $('#emojis-wysiwyg-value');
     $wysiwyg.on('change', function() {
       $wysiwyg_value.text($(this).val());

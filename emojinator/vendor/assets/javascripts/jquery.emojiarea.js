@@ -15,7 +15,6 @@
  */
 
 (function($, window, document) {
-
   var ELEMENT_NODE = 1;
   var TEXT_NODE = 3;
   var TAGS_BLOCK = ['p', 'div', 'pre', 'form', 'strong'];
@@ -441,13 +440,15 @@
     var $button = this.emojiarea.$button;
     var offset = $button.offset();
     offset.top += $button.outerHeight();
-    offset.left += Math.round($button.outerWidth() / 2);
+    offset.left = Math.round($button.outerWidth() / 4);
 
+    console.log(offset)
     this.$menu.css({
       top: offset.top,
       left: offset.left
     });
   };
+
 
   EmojiMenu.prototype.hide = function(callback) {
     if (this.emojiarea) {

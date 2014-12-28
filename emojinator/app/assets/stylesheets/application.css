@@ -23,15 +23,26 @@
  */
 
 *{
-	margin: 0;
-	padding: 0;
+	/*margin: 0;*/
+	/*padding: 0;*/
 }
 body {
 	font-family: Helvetica, arial, sans-serif;
 	font-size: 13px;
 	font-weight: 300;
-	padding: 100px;
+	padding: 20px 100px 0 100px;
 	-webkit-font-smoothing: antialiased;
+}
+button, input {
+	padding: 10px;
+}
+#emoji_button {
+	margin-top: 10px
+}
+
+#submit_button {
+	float: right;
+	margin-top: 10px
 }
 
 li {
@@ -49,7 +60,7 @@ textarea, .emoji-wysiwyg-editor {
 	padding: 15px;
 	font-size: 13px;
 	font-family: Helvetica, arial, sans-serif;
-	font-weight: normal;
+	font-weight: normal;aaaaa
 	border-radius: 3px;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);

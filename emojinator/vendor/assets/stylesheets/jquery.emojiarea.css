@@ -12,6 +12,7 @@
 .emoji-menu {
 	position: absolute;
 	z-index: 999;
+	left: 100px;
 	width: 200px;
 	padding: 0;
 	-webkit-box-sizing: border-box;
