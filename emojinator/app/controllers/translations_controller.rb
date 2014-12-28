@@ -2,7 +2,7 @@ class TranslationsController < ApplicationController
 
   def index
     @translation = Translation.new
-    @phrase = Phrase.sample(1)
+    @phrase = Phrase.all.sample(1).first
   end
 
   def create
