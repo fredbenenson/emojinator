@@ -42,7 +42,7 @@ button, input {
 
 #submit_button {
 	float: right;
-	margin-top: 10px
+	margin-top: 10px;
 }
 
 li {
@@ -60,7 +60,7 @@ textarea, .emoji-wysiwyg-editor {
 	padding: 15px;
 	font-size: 13px;
 	font-family: Helvetica, arial, sans-serif;
-	font-weight: normal;aaaaa
+	font-weight: normal;
 	border-radius: 3px;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
 	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
