@@ -1,1 +1,39 @@
-test
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Emojinator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <!-- boostrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link rel="icon" href="favicon.ico">
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= image_tag "favicon.png", style: "width: 100px; padding: 15px;" %>Translate This Into Emoji!</h1>
+    </div>
+
+
+
+    <script>
+    var $wysiwyg = $('.emojis-wysiwyg').emojiarea({
+      wysiwyg: true,
+      button: '#emoji_button'
+    });
+    var $wysiwyg_value = $('#emojis-wysiwyg-value');
+    $wysiwyg.on('change', function() {
+      $wysiwyg_value.text($(this).val());
+    });
+    $wysiwyg.trigger('change');
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
