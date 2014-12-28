@@ -21,24 +21,7 @@
       <h1><%= image_tag "favicon.png", style: "width: 100px; padding: 15px;" %>Translate This Into Emoji!</h1>
     </div>
 
-    <%= form_for @translation, url: {action: "create"} do |f| %>
-      <%= f.text_field :email %>
-      <%= f.text_area :emoji, rows: 5, html: { class: 'emojis-wysiwyg' } %>
-      <div style="display: none;" class="value"><pre id="emojis-wysiwyg-value"></pre></div>
-      <%= f.submit "Create" %>
-    <% end %>
-
-
-    <%= form_tag('/chooser') %>
-
-    <script>
-    var $wysiwyg = $('.emojis-wysiwyg').emojiarea({wysiwyg: true});
-    var $wysiwyg_value = $('#emojis-wysiwyg-value');
-    $wysiwyg.on('change', function() {
-      $wysiwyg_value.text($(this).val());
-    });
-    $wysiwyg.trigger('change');
-    </script>
+    Thank you.
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>

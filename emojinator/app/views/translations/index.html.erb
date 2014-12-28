@@ -21,16 +21,20 @@
       <h1><%= image_tag "favicon.png", style: "width: 100px; padding: 15px;" %>Translate This Into Emoji!</h1>
     </div>
 
-    <%= form_tag translation_path do %>
+    <%= form_for @translation do |f| %>
       <div class = "email">
-        Email:
-        <%= text_field_tag 'email' %>
+        <h3>Email:</h3>
+        <%= text_field_tag 'email', cookies[:contributor_email] %>
       </div>
-      <div class = "example">
-        <%= text_area_tag 'emoji', ':wave::neckbeard:', rows: 5, class: 'emojis-wysiwyg' %>
-      </div>
-      <div style="display: none;" class="value"><pre id="emojis-wysiwyg-value"></pre></div>
+      <h3>Please Translate This Phrase:</h3>
+      <em><%= @phrase.original_text %></em>
+      <%= hidden_field_tag :phrase_id, @phrase.id %>
+      <h3>Emoji Translation:</h3>
+      <%= text_area_tag 'emoji', ':wave::neckbeard:', rows: 5, class: 'emojis-wysiwyg' %>
       <input type='button' onclick='return false;' id = 'emoji_button' value = 'Emoji Palette'></input>
+      <h3>Additional Notes?</h1>
+      <%= text_area_tag 'additional_notes', nil, rows: 1, class: 'additional_notes' %>
+      <div style="display: none;" class="value"><pre id="emojis-wysiwyg-value"></pre></div>
       <%= button_tag "Submit", id: :submit_button %>
 
     <% end %>

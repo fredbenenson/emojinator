@@ -37,7 +37,7 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Don't serve static assets locally:
-  config.serve_static_assets = false
+  config.serve_static_files = false
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

@@ -50,7 +50,16 @@ li {
 }
 
 .email {
-	margin: 10px;
+	margin-bottom: 10px;
+}
+
+.additional_notes {
+	margin-top: 10px;
+
+}
+
+textarea, .additional_notes {
+	height: 50px;
 }
 
 textarea, .emoji-wysiwyg-editor {
