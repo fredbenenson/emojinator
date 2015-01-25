@@ -6,7 +6,7 @@ class TranslationsController < ApplicationController
         already_translated = Phrase.joins(:translations).where('contributor_id = ?', contributor.id).all
         phrases = Phrase.all - already_translated
         logger.debug phrases
-        @phrase = phrases.first
+        @phrase = phrases.sample(1).first
     else
         @phrase = Phrase.all.sample(1).first
     end
@@ -25,7 +25,7 @@ class TranslationsController < ApplicationController
     cookies[:contributor_email] = @contributor.email
     @contributor.save
     @translation.save
-    redirect_to :translations 
+    redirect_to :translations
   end
 
 end
