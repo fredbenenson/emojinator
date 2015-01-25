@@ -7,6 +7,9 @@ class TranslationsController < ApplicationController
         phrases = Phrase.all - already_translated
         logger.debug phrases
         @phrase = phrases.sample(1).first
+        if not @phrase
+            redirect_to :thanks
+        end
     else
         @phrase = Phrase.all.sample(1).first
     end
