@@ -20,7 +20,6 @@
     <div class="container">
       <h1><%= image_tag "favicon.png", style: "width: 100px; padding: 15px;" %>Translate This Into Emoji!</h1>
     </div>
-
     <div class=container style="margin-bottom: 100px;">
         <%= form_for @translation do |f| %>
           <div class = "email">
@@ -37,7 +36,6 @@
           <%= text_area_tag 'additional_notes', nil, rows: 1, class: 'additional_notes' %>
           <div style="display: none;" class="value"><pre id="emojis-wysiwyg-value"></pre></div>
           <%= button_tag "Submit", id: :submit_button %>
-
         <% end %>
     </div>
 
