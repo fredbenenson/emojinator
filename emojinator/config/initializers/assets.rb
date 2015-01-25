@@ -14,5 +14,5 @@ Rails.application.config.serve_static_assets = true
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( jquery.emojiarea.js )
 Rails.application.config.assets.precompile += %w( emojis.js )
-Rails.application.config.assets.precompile += %w( fontello.css )
+# Rails.application.config.assets.precompile += %w( fontello.css )
 Rails.application.config.assets.precompile += %w( emoji.css )
