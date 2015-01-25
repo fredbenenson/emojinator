@@ -49,6 +49,10 @@ li {
 	list-style: none;
 }
 
+a {
+	background-color: white;
+}
+
 .email {
 	margin-bottom: 10px;
 }
@@ -88,3 +92,30 @@ textarea, .emoji-wysiwyg-editor {
 	border-radius: 3px;
 	padding: 15px;
 }
+
+.group-selector {
+	width: 450px;
+	margin-left: -20px;
+}
+.emoji-header {
+  background-size: 32px 32px;
+	height: 32px;
+	width: 32px;
+	background-color: white;
+}
+.smile {
+	background-image: image-url("icon-smile.png");
+}
+.flower {
+	background-image: image-url("icon-flower.png");
+}
+.bell {
+	background-image: image-url("icon-bell.png");
+}
+.car {
+	background-image: image-url("icon-car.png");
+}
+.symbols {
+	background-image: image-url("icon-symbols.png");
+}
+
