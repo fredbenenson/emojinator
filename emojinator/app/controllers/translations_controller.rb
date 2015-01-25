@@ -7,8 +7,10 @@ class TranslationsController < ApplicationController
         phrases = Phrase.all - already_translated
         logger.debug phrases
         @phrase = phrases.sample(1).first
+        @remaining_phrases = phrases.size
     else
         @phrase = Phrase.all.sample(1).first
+        @remaining_phrases = Phrase.all.size
     end
   end
 

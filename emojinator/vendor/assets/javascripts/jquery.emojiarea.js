@@ -394,8 +394,6 @@
   };
 
   EmojiMenu.prototype.onItemSelected = function(group, emoji) {
-    console.log(group);
-    console.log(emoji);
     this.emojiarea.insert(group, emoji);
     this.hide();
   };
@@ -441,8 +439,6 @@
     var offset = $button.offset();
     offset.top += $button.outerHeight();
     offset.left = Math.round($button.outerWidth() / 4);
-
-    console.log(offset)
     this.$menu.css({
       top: offset.top,
       left: offset.left
