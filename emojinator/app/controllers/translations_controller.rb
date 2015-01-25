@@ -2,7 +2,14 @@ class TranslationsController < ApplicationController
 
   def index
     @translation = Translation.new
-    @phrase = Phrase.all.sample(1).first
+    if contributor = Contributor.where(email: cookies[:contributor_email]).first
+        already_translated = Phrase.joins(:translations).where('contributor_id = ?', contributor.id).all
+        phrases = Phrase.all - already_translated
+        logger.debug phrases
+        @phrase = phrases.first
+    else
+        @phrase = Phrase.all.sample(1).first
+    end
   end
 
   def create
@@ -18,6 +25,7 @@ class TranslationsController < ApplicationController
     cookies[:contributor_email] = @contributor.email
     @contributor.save
     @translation.save
+    redirect_to :translations 
   end
 
 end
