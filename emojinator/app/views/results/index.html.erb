@@ -28,7 +28,7 @@
           <div class = 'phrase'><%= p.original_text %></div>
             <ul>
             <% p.translations.each do |t| %>
-              <li><%= t.rumoji %></li>
+              <li><pre><%= t.rumoji %></pre></li>
             <% end %>
             </ul>
         <% end %>
