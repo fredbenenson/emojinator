@@ -18,25 +18,52 @@
   </head>
   <body>
     <div class="container">
-      <h1><%= image_tag "favicon.png", style: "width: 100px; padding: 15px;" %>Translate This Into Emoji!</h1>
+      <h1><%= image_tag "favicon.png", style: "width: 100px; padding: 15px;" %>The Emoji Translation Project</h1>
     </div>
     <div class=container style="margin-bottom: 100px;">
-        <%= form_for @translation do |f| %>
-          <div class = "email">
-            <h3>Email:</h3>
-            <%= text_field_tag 'email', cookies[:contributor_email] %>
-          </div>
-          <h3>Please Translate This Phrase:</h3>
-          <em><%= @phrase.original_text %></em>
+        <p><b>Hello and welcome to our emoji translation project.</b></p>
+        <p>Thanks for volunteering. Below, you'll see a phrase we'd like you to translate into emoji and the number of phrases remaining. Click the "Emoji Palette" button to find the right emoji, and get creative! </p>
+        <hr>
+        <%= form_for @translation, html: { onsubmit: 'return validateForm();' } do |f| %>
+          <h1>
+            <div class = 'phrase'><%= @phrase.original_text %></span>
+          </h1>
           <%= hidden_field_tag :phrase_id, @phrase.id %>
-          <h3>Emoji Translation:</h3>
+          <h4>Emoji Translation:</h4>
           <%= text_area_tag 'emoji', '', rows: 5, class: 'emojis-wysiwyg' %>
           <input type='button' onclick='return false;' id = 'emoji_button' value = 'Emoji Palette'></input>
           <h3>Additional Notes?</h1>
-          <%= text_area_tag 'additional_notes', nil, rows: 1, class: 'additional_notes' %>
+          <%= text_area_tag 'additional_notes', '', rows: 1, class: 'additional_notes' %>
           <div style="display: none;" class="value"><pre id="emojis-wysiwyg-value"></pre></div>
+          <div class = "email">
+            <h4>Email:
+            <%= text_field_tag 'email', cookies[:contributor_email] %>
+            </h4>
+          </div>
+          <%= @remaining_phrases %> phrases remaining.
           <%= button_tag "Submit", id: :submit_button %>
         <% end %>
+      <br>
+      <br>
+      <hr>
+      <h1>FAQs</h1>
+      <h2>What is this?</h2>
+
+      <p>We’re building an open source emoji translation engine and plan to launch a Kickstarter project for it soon. The idea will be to supply backers with a “phrasebook” of common phrases that have been translated into emoji, but the core of our project will be to fund the mass-translation of thousands of phrases in order to seed a real translation engine. This engine will hopefully capable of translating any English phrase into emoji, and, more interestingly, any emoji sentence into English, just like Google translate.
+
+      That's why you're here -- we need you to do your best to translate some phrases into Emoji.</p>
+
+      <h2>Then what happens?</h2>
+      <p>Once we get everyone’s results, we’ll measure agreement against everyone else who has volunteered, and see if this whole thing will actually work.
+
+      If the results (i.e., people tend to use similar emoji to describe the same phrase) are encouraging, then we’re going to scale it to Mechanical Turk.</p>
+
+      <p>We’ll then supply thousands of phrases to the “crowd”, and hopefully, through the power of statistics, we’ll be able to come up with enough data to power a general purpose engine.</p>
+
+      <h2>This is taking too long, do I have to do them all?</h2>
+      <p>Yes.</p>
+      <h2>What is this?</h2>
+      <p>Answer.</p>
     </div>
 
     <script>
@@ -51,5 +78,7 @@
     $wysiwyg.trigger('change');
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+
   </body>
 </html>

@@ -16,15 +16,10 @@
  *= require jquery.emojiarea
  */
 
-*{
-	/*margin: 0;*/
-	/*padding: 0;*/
-}
 body {
 	font-family: Helvetica, arial, sans-serif;
 	font-size: 13px;
 	font-weight: 300;
-	padding: 20px 100px 0 100px;
 	-webkit-font-smoothing: antialiased;
 }
 button, input {
@@ -56,8 +51,15 @@ a {
 
 }
 
+.phrase {
+	color: red;
+	// font-style: italic;
+	font-family: monospace;
+	padding-bottom: 20px;
+}
+
 textarea, .additional_notes {
-	height: 50px;
+	height: 100px;
 }
 
 textarea, .emoji-wysiwyg-editor {

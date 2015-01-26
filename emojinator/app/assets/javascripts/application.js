@@ -16,3 +16,17 @@
 //= require jquery.emojiarea
 //= require emojis
 //= require_tree .
+
+function validateForm() {
+  emoji_text = $('textarea#emoji')[0].value
+  email = $('#email')[0].value
+  if (emoji_text == "") {
+    alert("Please pick some emoji!");
+    return false;
+  }
+  if (email == "") {
+    alert("Please enter an email addess!");
+    return false;
+  }
+}
+

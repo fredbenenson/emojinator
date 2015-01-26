@@ -10,8 +10,10 @@ class TranslationsController < ApplicationController
         if not @phrase
             redirect_to :thanks
         end
+        @remaining_phrases = phrases.size
     else
         @phrase = Phrase.all.sample(1).first
+        @remaining_phrases = Phrase.all.size
     end
   end
 
