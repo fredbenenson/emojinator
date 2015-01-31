@@ -17,3 +17,16 @@
 # contributors
   * id
   * email
+
+
+dumping contents of database in a reasonably easy manner:
+
+heroku pg:psql
+emojiphrasebook::GRAY=> \o beta.en
+emojiphrasebook::GRAY=> select original_text from translations join phrases on translations.phrase_id = phrases.id order by translations.id;
+emojiphrasebook::GRAY=> \o beta.emj
+emojiphrasebook::GRAY=> select regexp_replace(regexp_replace(text, E'[\\n\\r]+', ' ', 'g'), '::', ': :', 'g') from translations join phrases on translations.phrase_id = phrases.id
+ order by translations.id;
+
+#then manually remove the first 2 and last 2 lines
+

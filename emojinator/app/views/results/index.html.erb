@@ -27,7 +27,7 @@
         <% @phrases.each do |p| %>
           <div class = 'phrase'><%= p.original_text %></div>
             <ul>
-            <% p.translations.each do |t| %>
+            <% p.translations.order(:id).each do |t| %>
               <li><pre><%= t.rumoji %></pre></li>
             <% end %>
             </ul>
