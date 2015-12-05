@@ -1,32 +1,8 @@
-# phrases
-  * id
-  * original_text
-  * language_code
+A simple app for helping people pick emoji for english setences.
 
-# translations
-  * id
-  * contributor_id
-  * created_at
-  * language_code
-  * text
-  * additional_notes
-  * click_count
-  * time_on_page
-  * user_agent
+Designed to run on Heroku.
 
-# contributors
-  * id
-  * email
+More documentation coming soon.
 
-
-dumping contents of database in a reasonably easy manner:
-
-heroku pg:psql
-emojiphrasebook::GRAY=> \o beta.en
-emojiphrasebook::GRAY=> select original_text from translations join phrases on translations.phrase_id = phrases.id order by translations.id;
-emojiphrasebook::GRAY=> \o beta.emj
-emojiphrasebook::GRAY=> select regexp_replace(regexp_replace(text, E'[\\n\\r]+', ' ', 'g'), '::', ': :', 'g') from translations join phrases on translations.phrase_id = phrases.id
- order by translations.id;
-
-#then manually remove the first 2 and last 2 lines
-
+MIT License
+By Fred Benenson and Chris Mulligan
