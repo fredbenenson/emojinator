@@ -1,3 +1,5 @@
+Source code for http://emojiphrasebook.herokuapp.com
+
 A simple app for helping people pick emoji for english setences.
 
 Designed to run on Heroku.
